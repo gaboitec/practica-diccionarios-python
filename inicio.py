@@ -47,3 +47,14 @@ def mostrar_productos(inventario):
             print(f"  {clave.capitalize()}: {valor}")
         print("")
 
+
+def buscar_producto(inventario):
+    codigo = input("\n🔎 Ingrese el código del producto a buscar: ").strip().upper()
+    if codigo in inventario:
+        print(f"\n📌 Detalles del producto '{codigo}':")
+        for clave, valor in inventario[codigo].items():
+            print(f"{clave.capitalize()}: {valor}")
+    else:
+        print("❌ Producto no encontrado.")
+
+
