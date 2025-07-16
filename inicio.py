@@ -58,3 +58,19 @@ def buscar_producto(inventario):
         print("❌ Producto no encontrado.")
 
 
+def calcular_valor_total(inventario):
+    total = sum(prod["precio"] * prod["cantidad"] for prod in inventario.values())
+    print(f"\n💰 Valor total del inventario: Q{total:.2f}")
+
+
+def contar_por_categoria(inventario):
+    conteo = {}
+    for datos in inventario.values():
+        categoria = datos["categoria"]
+        conteo[categoria] = conteo.get(categoria, 0) + 1
+
+    print("\n📊 Productos por categoría:")
+    for categoria, cantidad in conteo.items():
+        print(f"{categoria}: {cantidad}")
+
+
