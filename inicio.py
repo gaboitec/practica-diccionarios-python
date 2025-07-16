@@ -38,3 +38,12 @@ def registrar_producto(inventario):
         print("✅ Producto registrado exitosamente.")
         break
 
+
+def mostrar_productos(inventario):
+    print("\n📦 Lista de productos en inventario:")
+    for codigo, datos in inventario.items():
+        print(f"- Código: {codigo}")
+        for clave, valor in datos.items():
+            print(f"  {clave.capitalize()}: {valor}")
+        print("")
+
